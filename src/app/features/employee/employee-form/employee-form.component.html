@@ -1,1 +1,180 @@
-<p>employee-form works!</p>
+<form [formGroup]="employeeForm">
+  <mat-card>
+    <mat-card-title>Employee Information</mat-card-title>
+    <mat-card-content formGroupName="employeeInformation">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Global ID</mat-label>
+        <input matInput formControlName="globalId" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Unit ID</mat-label>
+        <input matInput formControlName="unitId" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Employee Type</mat-label>
+        <mat-select formControlName="employeeType" required>
+          <mat-option value="Full-Time">Full-Time</mat-option>
+          <mat-option value="Part-Time">Part-Time</mat-option>
+          <mat-option value="Contract">Contract</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Employee ID</mat-label>
+        <input matInput formControlName="employeeID" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Profile Image</mat-label>
+        <input matInput formControlName="profileImage" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Salute</mat-label>
+        <mat-select formControlName="salute" required>
+          <mat-option value="Mr.">Mr.</mat-option>
+          <mat-option value="Ms.">Ms.</mat-option>
+          <mat-option value="Mrs.">Mrs.</mat-option>
+          <mat-option value="Dr.">Dr.</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Middle Name</mat-label>
+        <input matInput formControlName="middleName" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender" required>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email ID</mat-label>
+        <input matInput formControlName="emailId" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Mobile No.</mat-label>
+        <input matInput formControlName="mobileNo" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Window Login ID</mat-label>
+        <input matInput formControlName="windowLoginID" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Domain Name</mat-label>
+        <input matInput formControlName="domainName" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Direct/Indirect</mat-label>
+        <mat-select formControlName="directIndirect" required>
+          <mat-option value="Direct">Direct</mat-option>
+          <mat-option value="Indirect">Indirect</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Deputation SD</mat-label>
+        <input
+          matInput
+          formControlName="deputationSD"
+          required
+          [matDatepicker]="pickerSD"
+        />
+        <mat-datepicker #pickerSD></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Deputation ED</mat-label>
+        <input
+          matInput
+          formControlName="deputationED"
+          required
+          [matDatepicker]="pickerED"
+        />
+        <mat-datepicker #pickerED></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Deputation Location</mat-label>
+        <input matInput formControlName="deputationLocation" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Shift Rule</mat-label>
+        <mat-select formControlName="shiftRule" required>
+          <mat-option value="Day Shift">Day Shift</mat-option>
+          <mat-option value="Night Shift">Night Shift</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Remarks</mat-label>
+        <textarea matInput formControlName="remarks"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Joining Detail</mat-card-title>
+    <mat-card-content >
+      <mat-form-field appearance="fill">
+        <mat-label>Interview Date</mat-label>
+        <input
+          matInput
+          formControlName="interviewDate"
+          required
+          [matDatepicker]="pickerID"
+        />
+        <mat-datepicker #pickerID></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Unit DOJ</mat-label>
+        <input
+          matInput
+          formControlName="unitDOJ"
+          required
+          [matDatepicker]="pickerUD"
+        />
+        <mat-datepicker #pickerUD></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Group DOJ</mat-label>
+        <input
+          matInput
+          formControlName="groupDOJ"
+          required
+          [matDatepicker]="pickerGD"
+        />
+        <mat-datepicker #pickerGD></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Confirmed</mat-label>
+        <mat-checkbox formControlName="confirmed"></mat-checkbox>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Confirmation Date</mat-label>
+        <input
+          matInput
+          formControlName="confirmationDate"
+          required
+          [matDatepicker]="pickerCD"
+        />
+        <mat-datepicker #pickerCD></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Extended Month</mat-label>
+        <input matInput formControlName="extendedMonth" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Extended Date Reason</mat-label>
+        <textarea matInput formControlName="extendedDateReason"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Current Group Experiences</mat-label>
+        <textarea matInput formControlName="currentGroupExperiences"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+</form>

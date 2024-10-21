@@ -1,1 +1,44 @@
 <p>login works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Username</mat-label>
+    <input formControlName="username" matInput placeholder="" />
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Enter your password</mat-label>
+    <input
+      formControlName="password"
+      matInput
+      [type]="hide() ? 'password' : 'text'"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="clickEvent($event)"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide()"
+    >
+      <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Unit</mat-label>
+    <mat-select formControlName="unit" required>
+      <mat-option value="unit1">Unit 1</mat-option>
+      <mat-option value="unit2">Unit 2</mat-option>
+      <mat-option value="unit3">Unit 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox>
+
+  <div class="links">
+    <a href="#">Forgot password?</a>
+  </div>
+
+  <div></div>
+
+  <button mat-raised-button color="primary" type="submit">Process</button>
+</form>

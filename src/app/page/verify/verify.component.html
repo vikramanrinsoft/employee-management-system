@@ -1,1 +1,12 @@
-<p>verify works!</p>
+<div>
+  <h1>Verification Code</h1>
+  <p>Please enter the code sent to Demo&#64;motherson.com</p>
+  <form [formGroup]="verifyForm" (submit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <input matInput formControlName="code" maxlength="4" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <p>Resend Verification Code in 1:53</p>
+    <button mat-raised-button color="primary" type="submit">Sign in</button>
+  </form>
+</div>
